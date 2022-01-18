@@ -1,0 +1,70 @@
+/* --color-red: rgb(204,54,40);
+--color-blue: rgb(0,103,194);
+--color-green: rgb(45,195,34); */
+
+:root {
+  --color-red: rgb(130,0,0);
+  --color-green: rgb(0,130,0);
+  --color-blue: rgb(0,0,130);
+
+  --vertical-r: 0;
+  --horizontal-r: 0;
+
+  --vertical-g: 0;
+  --horizontal-g: 0;
+
+  --vertical-b: 0;
+  --horizontal-b: 0;
+}
+
+html, body, .main-container {
+  -webkit-font-smoothing: antialiased;
+  height: 100vh;
+  background-color: #1F1F1F;
+}
+
+.main-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 0;
+}
+
+.channel-splitter {
+  font-weight: 700;
+  height: 1px;
+  width: 1px;
+}
+
+.channel {
+  opacity: 0.95;
+  position: absolute;
+  font-size: 1.5rem;
+  mix-blend-mode: lighten;
+  transition: all linear .05s;
+}
+
+.channel-r {
+  text-shadow: -3   px -3px 0 var(--color-green), 3px -3px 0 var(--color-green), -3px 3px 0 var(--color-green), 3px 3px 0 var(--color-green);
+
+  color: var(--color-red);
+  transform:
+    translate(var(--horizontal-r), var(--vertical-r));
+}
+
+.channel-g {
+  text-shadow: -3px -3px 0 var(--color-blue), 3px -3px 0 var(--color-blue), -3px 3px 0 var(--color-blue), 3px 3px 0 var(--color-blue);
+
+  color: var(--color-green);
+  transform:
+    translate(var(--horizontal-g), var(--vertical-g));
+}
+
+.channel-b {
+  text-shadow: -3px -3px 0 var(--color-red), 3px -3px 0 var(--color-red), -3px 3px 0 var(--color-red), 3px 3px 0 var(--color-red);
+
+  color: var(--color-blue);
+  transform:
+    translate(var(--horizontal-b), var(--vertical-b));
+}
+
